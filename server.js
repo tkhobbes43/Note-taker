@@ -16,6 +16,7 @@ app.get('/notes', (req, res) =>
 );
 // GET Wildcard route to direct users to index.html
 app.get('/api/notes', (req, res) => {
+    console.log('nice')
     fs.readFile('./db/db.json', (err, data) => {
         const notesFromFile = JSON.parse(data)
         res.json(notesFromFile)
