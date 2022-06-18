@@ -50,7 +50,7 @@ app.delete('/api/notes/:id', (req, res) => {
     fs.readFile(path.join(__dirname, "./db/db.json"), (err, data) => {
         if (err) throw err;
         const notes = JSON.parse(data);
-        const notesArray = notes.filter(item => {
+        const notesArray = notes.filter( item => {
             return item.id !==  noteID
         });
         fs.writeFile('./db/db.json', JSON.stringify(notesArray), (err, data) => {
