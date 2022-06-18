@@ -11,15 +11,18 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
 app.post('/api/notes', (req, res) => {
-    const newNote = {
-        title: req.body.title,
-        text: req.body.text,
-        id: uuid(),
-    };
-    let notes = JSON.parse(data)
-    notes.push(newNote);
-    fs.writeFile('./db/db.json', JSON.stringify(notes), (err, data) => {
-        res.json(notes);
+    fs.readFile(path.join(__dirname, './db/db.json'), (err, data) => {
+        if (err) throw err;
+        const notes = JSON.parse(data);
+        const newNote = req.body;
+        newNote.id = uuid();
+        notes.push(newNote);
+
+        const createNote = JSON.stringify(notes);
+        fs.writeFile(path.join(__dirname, "./db/db.json"), createNote, (err) => {
+            if (err) throw err;
+        });
+        res.json(newNote);
     });
 });
 
