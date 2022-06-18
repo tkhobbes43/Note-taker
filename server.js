@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-app.post('/api/notes', (req, res => {
+app.post('/api/notes', (req, res) => {
     const newNote = {
         title: req.body.title,
         text: req.body.text,
@@ -21,7 +21,7 @@ app.post('/api/notes', (req, res => {
     fs.writeFile('./db/db.json', JSON.stringify(notes), (err, data) => {
         res.json(notes);
     });
-}));
+});
 
 // GET /notes route to return notes.html
 app.get('/notes', (req, res) => 
