@@ -38,7 +38,11 @@ THEN I am presented with empty fields to enter a new note title and the note’s
 ```
 
 ## Usage
-Please see the below walkthrough video.
+Please see the below walkthrough video as well as the link to the Heroku deployed application.
+
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://blooming-river-29054.herokuapp.com/)
+
+[Walkthrough Video](https://drive.google.com/file/d/1qfopT1c3anhbeQc_yO6wEi7EDzRcpTAX/view?usp=sharing)
 
 ## Questions
 For any questions or concerns, contact me at either my [GitHub](https://github.com/tkhobbes43)
